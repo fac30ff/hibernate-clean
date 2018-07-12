@@ -26,4 +26,7 @@ public class HibernateUtil {
         }
         return sessionFactory;
     }
+
+    private HibernateUtil() {
+    }
 }

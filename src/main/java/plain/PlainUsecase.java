@@ -6,8 +6,9 @@ import util.HibernateUtil;
 public class PlainUsecase {
     public void main() {
         System.out.println("Hello, JPA, Plain Usecase");
+
         Session session = HibernateUtil.getSessionFactory().openSession();
-        session.beginTransaction();
+        //session.beginTransaction();
 
         PlainQueries pq = new PlainQueries(session);
 
@@ -15,7 +16,7 @@ public class PlainUsecase {
         System.out.println(pq.req2());
         pq.req3().forEach(System.out::println);
 
-        session.getTransaction().commit();
+        //session.getTransaction().commit();
         session.close();
 
         HibernateUtil.getSessionFactory().close();
